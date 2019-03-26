@@ -2,7 +2,8 @@
 var util = require('util');
 var stream = require('stream');
 
-var CRLF = /\r?\n/g;
+var CRLF = /\r?\n/g,
+    CR = /\r/g;
 
 function Linepoint(chars) {
   if (!(this instanceof Linepoint)) return new Linepoint(chars);
@@ -22,7 +23,8 @@ util.inherits(Linepoint, stream.Transform);
 Linepoint.prototype._transform = function (chunk, encodeing, done) {
   chunk = this._lastCR + chunk.toString();
   chunk = chunk.replace(CRLF, this._chars);
-  
+  chunk = chunk.replace(CR, this._chars);
+
   // If the last char is \r then it might be followed by a \n char
   // so hold that char back and use it in the next chunk
   if (chunk.charCodeAt(chunk.length - 1) === 13) {

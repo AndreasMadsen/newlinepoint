@@ -1,7 +1,7 @@
 {
-  "name": "newlinepoint",
+  "name": "voilab-newlinepoint",
   "description": "Normalize or convert newlines",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "scripts": {
     "test": "tap test/test.js"
@@ -9,7 +9,7 @@
   "main": "./newlinepoint.js",
   "repository" : {
     "type": "git",
-    "url": "git://github.com/AndreasMadsen/newlinepoint.git"
+    "url": "git://github.com/voilab/newlinepoint.git"
   },
   "keywords": [
     "CRLF",

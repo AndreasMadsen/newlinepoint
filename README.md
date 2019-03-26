@@ -17,7 +17,7 @@ outputs an buffer stream.
 var newlinepoint = require('newlinepoint');
 
 // The first argument is a reqired string, it can be anything, in this example
-// \r\n will be converted to \n
+// \r\n AND \r will be converted to \n
 var convert = newlinepoint('\n');
 
 convert.write('Hallo');
